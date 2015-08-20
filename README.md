@@ -9,6 +9,28 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+A series of UITableViewDataSource classes to allow you to slice and dice your data any which way you need.
+
+The `PLDataSource` class provides a unified interface for all table view data sources. Various concrete subclasses provide easily-customizable behaviour. Create your own data sources by subclassing one of concrete implementations and overriding `tableView:cellForRowAtIndexPath:`.
+
+All data sources inform their delegates of changes using the `PLDataSourceDelegate` protocol.
+
+### `PLBasicDataSource`
+
+A subclass of `PLDataSource` that simply takes an array of items and uses it to populate a single-section table view.
+
+### `PLFetchedResultsDataSource`
+
+A sublcass of `PLDataSource` that wraps an `NSFetchedResultsController`. Your custom subclass should override `defaultFetchRequest`.
+
+### `PLMergedDataSource`
+
+A subclass that merges the results of several other data sources. (TODO: Add more here)
+
+### `PLDirectoryContentDataSource`
+
+A subclass of `PLDataSource` that observes the content of a particular directory and populates a single-section table view with the results.
+
 ## Requirements
 
 ## Installation
@@ -27,3 +49,4 @@ Hirad Motamed, hirad@pendarlabs.com
 ## License
 
 PLDataSource is available under the MIT license. See the LICENSE file for more info.
+
