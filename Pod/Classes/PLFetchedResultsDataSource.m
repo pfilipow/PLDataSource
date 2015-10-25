@@ -224,14 +224,6 @@
     THROW_UNIMPLEMENTED_METHOD_EXCEPTION;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if ([[self.fetchedResultsController sections] count] > 0) {
-        id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-        return [sectionInfo name];
-    } else
-        return nil;
-}
-
 #pragma mark - NSCopying
 
 -(id)copyWithZone:(NSZone *)zone
