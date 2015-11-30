@@ -13,16 +13,26 @@
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* PLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* PLAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* PLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* PLViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
-		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		6196FCC81BF5AB2300024577 /* PLBasicDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6196FCC71BF5AB2300024577 /* PLBasicDataViewController.m */; };
+		6196FCD21BF5BBCA00024577 /* ExampleBasicDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6196FCD11BF5BBCA00024577 /* ExampleBasicDataSource.m */; };
+		6196FCD41BF69D6B00024577 /* PLBasicDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6196FCD31BF69D6B00024577 /* PLBasicDataSourceTests.m */; };
+		61E0A55D1BF9667900453820 /* PLFetchedResultsDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E0A55C1BF9667900453820 /* PLFetchedResultsDataSourceTests.m */; };
+		61E0A5611BF9693E00453820 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 61E0A55F1BF9693E00453820 /* Model.xcdatamodeld */; };
+		61E0A5641BF969A200453820 /* PLCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E0A5631BF969A200453820 /* PLCoreDataStack.m */; };
+		61E0A5681BF96B1F00453820 /* ExampleFetchedResultsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E0A5671BF96B1F00453820 /* ExampleFetchedResultsDataSource.m */; };
+		61E0A56B1BF96C7000453820 /* FetchedResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E0A56A1BF96C7000453820 /* FetchedResultsTableViewController.m */; };
+		61E0A5741BF99C8800453820 /* PLMergedDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E0A5731BF99C8800453820 /* PLMergedDataSourceTests.m */; };
+		61E0A5751BF99F7700453820 /* PLCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E0A5631BF969A200453820 /* PLCoreDataStack.m */; };
+		61E0A57A1BF9BF9000453820 /* ExampleMergedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E0A5791BF9BF9000453820 /* ExampleMergedDataSource.m */; };
+		61E0A57D1BF9C20900453820 /* MergedDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E0A57C1BF9C20900453820 /* MergedDataViewController.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		AEDCE22C6B7B27A8AC4F4F49 /* Pods_PLDataSource_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2E9629BFE32D8DA5258DDC2 /* Pods_PLDataSource_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		F1613B28AD75D51A1055655C /* Pods_PLDataSource_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0647CEB950E16F90B364E1FF /* Pods_PLDataSource_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		AEDCE22C6B7B27A8AC4F4F49 /* Pods_PLDataSource_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2E9629BFE32D8DA5258DDC2 /* Pods_PLDataSource_Tests.framework */; };
+		F1613B28AD75D51A1055655C /* Pods_PLDataSource_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0647CEB950E16F90B364E1FF /* Pods_PLDataSource_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,15 +60,32 @@
 		6003F59B195388D20070C39A /* PLDataSource-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PLDataSource-Prefix.pch"; sourceTree = "<group>"; };
 		6003F59C195388D20070C39A /* PLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* PLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* PLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* PLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* PLDataSource_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PLDataSource_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		6196FCC61BF5AB2300024577 /* PLBasicDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLBasicDataViewController.h; sourceTree = "<group>"; };
+		6196FCC71BF5AB2300024577 /* PLBasicDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLBasicDataViewController.m; sourceTree = "<group>"; };
+		6196FCD01BF5BBCA00024577 /* ExampleBasicDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleBasicDataSource.h; sourceTree = "<group>"; };
+		6196FCD11BF5BBCA00024577 /* ExampleBasicDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleBasicDataSource.m; sourceTree = "<group>"; };
+		6196FCD31BF69D6B00024577 /* PLBasicDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLBasicDataSourceTests.m; sourceTree = "<group>"; };
+		61E0A55C1BF9667900453820 /* PLFetchedResultsDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLFetchedResultsDataSourceTests.m; sourceTree = "<group>"; };
+		61E0A5601BF9693E00453820 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		61E0A5621BF969A200453820 /* PLCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCoreDataStack.h; sourceTree = "<group>"; };
+		61E0A5631BF969A200453820 /* PLCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLCoreDataStack.m; sourceTree = "<group>"; };
+		61E0A5661BF96B1F00453820 /* ExampleFetchedResultsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleFetchedResultsDataSource.h; sourceTree = "<group>"; };
+		61E0A5671BF96B1F00453820 /* ExampleFetchedResultsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleFetchedResultsDataSource.m; sourceTree = "<group>"; };
+		61E0A5691BF96C7000453820 /* FetchedResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedResultsTableViewController.h; sourceTree = "<group>"; };
+		61E0A56A1BF96C7000453820 /* FetchedResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsTableViewController.m; sourceTree = "<group>"; };
+		61E0A56C1BF979DD00453820 /* SortOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortOption.h; sourceTree = "<group>"; };
+		61E0A5731BF99C8800453820 /* PLMergedDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLMergedDataSourceTests.m; sourceTree = "<group>"; };
+		61E0A5761BF9A52900453820 /* TestHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelpers.h; sourceTree = "<group>"; };
+		61E0A5781BF9BF9000453820 /* ExampleMergedDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMergedDataSource.h; sourceTree = "<group>"; };
+		61E0A5791BF9BF9000453820 /* ExampleMergedDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMergedDataSource.m; sourceTree = "<group>"; };
+		61E0A57B1BF9C20900453820 /* MergedDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MergedDataViewController.h; sourceTree = "<group>"; };
+		61E0A57C1BF9C20900453820 /* MergedDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MergedDataViewController.m; sourceTree = "<group>"; };
 		6D5C41A1D066F6374DBD7069 /* Pods-PLDataSource_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLDataSource_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-PLDataSource_Example/Pods-PLDataSource_Example.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A582802F986843C0E415F758 /* Pods-PLDataSource_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLDataSource_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PLDataSource_Tests/Pods-PLDataSource_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,13 +157,16 @@
 		6003F593195388D20070C39A /* Example for PLDataSource */ = {
 			isa = PBXGroup;
 			children = (
+				61E0A5771BF9BF5F00453820 /* Merged Data Source */,
+				61E0A55E1BF9692400453820 /* Fetched Results Data Source */,
+				6196FCCF1BF5BBA000024577 /* Basic Data Source */,
 				6003F59C195388D20070C39A /* PLAppDelegate.h */,
 				6003F59D195388D20070C39A /* PLAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* PLViewController.h */,
-				6003F5A6195388D20070C39A /* PLViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				61E0A55F1BF9693E00453820 /* Model.xcdatamodeld */,
+				61E0A56C1BF979DD00453820 /* SortOption.h */,
 			);
 			name = "Example for PLDataSource";
 			path = PLDataSource;
@@ -156,8 +186,11 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				6003F5BB195388D20070C39A /* Tests.m */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
+				6196FCD31BF69D6B00024577 /* PLBasicDataSourceTests.m */,
+				61E0A55C1BF9667900453820 /* PLFetchedResultsDataSourceTests.m */,
+				61E0A5731BF99C8800453820 /* PLMergedDataSourceTests.m */,
+				61E0A5761BF9A52900453820 /* TestHelpers.h */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -180,6 +213,41 @@
 				1F62F0BD0C690B6961861879 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		6196FCCF1BF5BBA000024577 /* Basic Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				6196FCC61BF5AB2300024577 /* PLBasicDataViewController.h */,
+				6196FCC71BF5AB2300024577 /* PLBasicDataViewController.m */,
+				6196FCD01BF5BBCA00024577 /* ExampleBasicDataSource.h */,
+				6196FCD11BF5BBCA00024577 /* ExampleBasicDataSource.m */,
+			);
+			name = "Basic Data Source";
+			sourceTree = "<group>";
+		};
+		61E0A55E1BF9692400453820 /* Fetched Results Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				61E0A5621BF969A200453820 /* PLCoreDataStack.h */,
+				61E0A5631BF969A200453820 /* PLCoreDataStack.m */,
+				61E0A5661BF96B1F00453820 /* ExampleFetchedResultsDataSource.h */,
+				61E0A5671BF96B1F00453820 /* ExampleFetchedResultsDataSource.m */,
+				61E0A5691BF96C7000453820 /* FetchedResultsTableViewController.h */,
+				61E0A56A1BF96C7000453820 /* FetchedResultsTableViewController.m */,
+			);
+			name = "Fetched Results Data Source";
+			sourceTree = "<group>";
+		};
+		61E0A5771BF9BF5F00453820 /* Merged Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				61E0A5781BF9BF9000453820 /* ExampleMergedDataSource.h */,
+				61E0A5791BF9BF9000453820 /* ExampleMergedDataSource.m */,
+				61E0A57B1BF9C20900453820 /* MergedDataViewController.h */,
+				61E0A57C1BF9C20900453820 /* MergedDataViewController.m */,
+			);
+			name = "Merged Data Source";
 			sourceTree = "<group>";
 		};
 		B8722BEAEFBDD2C50F015DE7 /* Pods */ = {
@@ -390,8 +458,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61E0A57A1BF9BF9000453820 /* ExampleMergedDataSource.m in Sources */,
+				6196FCD21BF5BBCA00024577 /* ExampleBasicDataSource.m in Sources */,
 				6003F59E195388D20070C39A /* PLAppDelegate.m in Sources */,
-				6003F5A7195388D20070C39A /* PLViewController.m in Sources */,
+				61E0A56B1BF96C7000453820 /* FetchedResultsTableViewController.m in Sources */,
+				61E0A57D1BF9C20900453820 /* MergedDataViewController.m in Sources */,
+				61E0A5611BF9693E00453820 /* Model.xcdatamodeld in Sources */,
+				61E0A5681BF96B1F00453820 /* ExampleFetchedResultsDataSource.m in Sources */,
+				61E0A5641BF969A200453820 /* PLCoreDataStack.m in Sources */,
+				6196FCC81BF5AB2300024577 /* PLBasicDataViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,7 +475,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5BC195388D20070C39A /* Tests.m in Sources */,
+				6196FCD41BF69D6B00024577 /* PLBasicDataSourceTests.m in Sources */,
+				61E0A5741BF99C8800453820 /* PLMergedDataSourceTests.m in Sources */,
+				61E0A55D1BF9667900453820 /* PLFetchedResultsDataSourceTests.m in Sources */,
+				61E0A5751BF99F7700453820 /* PLCoreDataStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +687,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		61E0A55F1BF9693E00453820 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				61E0A5601BF9693E00453820 /* Model.xcdatamodel */,
+			);
+			currentVersion = 61E0A5601BF9693E00453820 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6003F582195388D10070C39A /* Project object */;
 }

@@ -34,15 +34,31 @@
     [self setItems:items animated:NO];
 }
 
+-(BOOL)delegateCanAnimateChanges
+{
+    return self.delegate != nil &&
+        [self.delegate respondsToSelector:@selector(dataSourceWillChangeContent:)] &&
+        [self.delegate respondsToSelector:@selector(dataSourceDidChangeContent:)] &&
+        [self.delegate respondsToSelector:@selector(dataSource:didRemoveObject:atIndexPath:)] &&
+        [self.delegate respondsToSelector:@selector(dataSource:didInsertObject:atIndexPath:)] &&
+        [self.delegate respondsToSelector:@selector(dataSource:didMoveObject:atIndexPath:toIndexPath:)];
+}
+
 -(void)setItems:(NSArray *)items animated:(BOOL)animated
 {
     if (_items == items || [items isEqualToArray:_items]) {
         return;
     }
     
-    if (!animated) {
+    BOOL shouldAnimateChanges = animated && [self delegateCanAnimateChanges];
+    
+    if (!shouldAnimateChanges) {
         _items = [items copy];
-        [self.delegate dataSource:self didRefreshSections:[NSIndexSet indexSetWithIndex:0]];
+        if (self.delegate &&
+            [self.delegate respondsToSelector:@selector(dataSource:didRefreshSections:)]) {
+            [self.delegate dataSource:self
+                   didRefreshSections:[NSIndexSet indexSetWithIndex:0]];
+        }
         return;
     }
     

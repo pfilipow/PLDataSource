@@ -15,6 +15,11 @@
 @property (nonatomic, copy) NSArray* items;
 
 /// Use this method to change the items with optional animation.
+/// Note: when animated, the receiver informs its delegate of all
+/// additions, deletions, and moves of the items it manages. That
+/// depends on being able to distinguish equality of the objects.
+/// Since NSOrderedSets are used for this, displaying data with
+/// duplicate objects may also be problematic.
 -(void)setItems:(NSArray *)items animated:(BOOL)animated;
 
 @end

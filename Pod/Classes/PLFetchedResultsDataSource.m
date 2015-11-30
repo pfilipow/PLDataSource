@@ -22,18 +22,13 @@
 
 @synthesize allObjects = _allObjects;
 
--(nullable instancetype)initWithManagedObjectContext:(nonnull NSManagedObjectContext *)context {
+-(nullable instancetype)initWithManagedObjectContext:(nonnull NSManagedObjectContext *)context
+{
     if (self = [super init]) {
         _managedObjectContext = context;
-        [self listenForChanges];
     }
     
     return self;
-}
-
--(void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 -(void)loadContent
@@ -108,26 +103,6 @@
 }
 
 #pragma mark - fetchedResultsController setup 
-
--(void)listenForChanges
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(contextDidSave:)
-                                                 name:NSManagedObjectContextDidSaveNotification
-                                               object:nil];
-}
-
--(void)contextDidSave:(NSNotification*)notification
-{
-    NSManagedObjectContext* moc = self.managedObjectContext;
-    NSManagedObjectContext* savedContext = (NSManagedObjectContext*)notification.object;
-    if ([savedContext persistentStoreCoordinator] == [moc persistentStoreCoordinator] &&
-        savedContext.parentContext == nil) {
-        [moc performBlock:^{
-            [moc mergeChangesFromContextDidSaveNotification:notification];
-        }];
-    }
-}
 
 -(NSFetchedResultsController *)fetchedResultsController
 {
@@ -205,7 +180,6 @@
 
 -(void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
-    [self refreshObjects];
     if (self.delegate) {
         [self.delegate dataSourceDidChangeContent:self];
     }
@@ -217,11 +191,6 @@
 {
     // Return the number of rows in the section.
     return [[[self.fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
-}
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    THROW_UNIMPLEMENTED_METHOD_EXCEPTION;
 }
 
 #pragma mark - NSCopying

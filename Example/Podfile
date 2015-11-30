@@ -7,6 +7,6 @@ end
 
 target 'PLDataSource_Tests', :exclusive => true do
   pod "PLDataSource", :path => "../"
-
+  pod "OCMock", '~> 3.2'
   
 end

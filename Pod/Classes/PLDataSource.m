@@ -51,21 +51,21 @@
     
 }
 
--(Class)tableViewCellClass
+-(NSString *)registeredCellReuseIdentifierForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_tableViewCellClass == nil) {
-        _tableViewCellClass = [UITableViewCell class];
-    }
-    return _tableViewCellClass;
+    return nil;
 }
 
--(NSString *)cellReuseIdentifier
+-(NSString *)cellReuseIdentifierForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_cellReuseIdentifier == nil) {
-        _cellReuseIdentifier = @"Cell";
-    }
-    
-    return _cellReuseIdentifier;
+    return @"Cell";
+}
+
+-(void)tableView:(UITableView *)tableView
+   configureCell:(UITableViewCell *)cell
+       forObject:(id)object
+     atIndexPath:(NSIndexPath *)indexPath {
+    THROW_UNIMPLEMENTED_METHOD_EXCEPTION;
 }
 
 #pragma mark UITableViewDelegate Forwarding
@@ -89,7 +89,47 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    THROW_UNIMPLEMENTED_METHOD_EXCEPTION;
+    id object = [self objectAtIndexPath:indexPath];
+    
+    UITableViewCell* cell = [self createAndConfigureRegisteredCell:tableView :indexPath :object];
+    if (!cell) {
+        cell = [self createAndConfigureUnregisteredCell:tableView :indexPath :object];
+    }
+    
+    return cell;
+}
+
+#pragma mark - Helpers
+
+-(UITableViewCell*)createAndConfigureRegisteredCell:(UITableView*)tableView
+                                                   :(NSIndexPath*)indexPath
+                                                   :(id)object
+{
+    NSString* reuseIdentifier = [self registeredCellReuseIdentifierForRowAtIndexPath:indexPath];
+    if (!reuseIdentifier) {
+        return nil;
+    }
+    
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier
+                                                            forIndexPath:indexPath];
+    
+    [self tableView:tableView configureCell:cell forObject:object atIndexPath:indexPath];
+    
+    return cell;
+}
+
+-(UITableViewCell*)createAndConfigureUnregisteredCell:(UITableView*)tableView
+                                                     :(NSIndexPath*)indexPath
+                                                     :(id)object
+{
+    NSString* reuseIdentifier = [self cellReuseIdentifierForRowAtIndexPath:indexPath];
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    if (!cell) {
+        cell = [self createCellWithReuseIdentifier:reuseIdentifier];
+    }
+    
+    [self tableView:tableView configureCell:cell forObject:object atIndexPath:indexPath];
+    return cell;
 }
 
 @end
