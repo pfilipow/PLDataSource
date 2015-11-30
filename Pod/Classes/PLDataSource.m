@@ -99,6 +99,11 @@
     return cell;
 }
 
+-(UITableViewCell *)createCellWithReuseIdentifier:(NSString *)identifier
+{
+    THROW_UNIMPLEMENTED_METHOD_EXCEPTION;
+}
+
 #pragma mark - Helpers
 
 -(UITableViewCell*)createAndConfigureRegisteredCell:(UITableView*)tableView
