@@ -9,15 +9,15 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-A series of UITableViewDataSource classes to allow you to slice and dice your data any which way you need.
+A series of UITableViewDataSource classes to make it easy to slice and dice your data any which way you need.
 
-The `PLDataSource` class provides a unified interface for all table view data sources. Various concrete subclasses provide easily-customizable behaviour. Create your own data sources by subclassing one of concrete implementations and overriding `tableView:cellForRowAtIndexPath:`.
+The `PLDataSource` class provides a unified interface for all table view data sources. The two concrete subclasses provide easily-customizable behaviour (one for displaying simple lists and another for using an `NSFetchedResultsController`). Create your own data sources by subclassing one of concrete implementations and overriding `tableView:configureCell:forObject:atIndexPath:` along with `registeredCellReuseIdentifierForRowAtIndexPath:`.
 
-All data sources inform their delegates of changes using the `PLDataSourceDelegate` protocol.
+All data sources inform their delegates of changes using the `PLDataSourceDelegate` protocol. `PLTableViewController` conforms to this protocol. Make your view controllers inherit from it and override `initializeDataSources` to get all data source functionality for free.
 
 ### `PLBasicDataSource`
 
-A subclass of `PLDataSource` that simply takes an array of items and uses it to populate a single-section table view.
+A subclass of `PLDataSource` that simply takes an array of items and uses it to populate a single-section table view. Changes to this array can be intelligently animated, assuming the objects respond to `isEqual:` appropriately.
 
 ### `PLFetchedResultsDataSource`
 
@@ -25,13 +25,7 @@ A sublcass of `PLDataSource` that wraps an `NSFetchedResultsController`. Your cu
 
 ### `PLMergedDataSource`
 
-A subclass that merges the results of several other data sources. (TODO: Add more here)
-
-### `PLDirectoryContentDataSource`
-
-A subclass of `PLDataSource` that observes the content of a particular directory and populates a single-section table view with the results.
-
-## Requirements
+A subclass of `PLDataSource` that merges the results of several other data sources. Each of its "child" data sources is assumed to manage a single section in a table view. This is handy if you use Core Data and would like to use `NSFetchedResultsController` to show different entities in different sections of a table view.
 
 ## Installation
 
