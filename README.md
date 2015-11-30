@@ -1,6 +1,6 @@
 # PLDataSource
 
-[![CI Status](http://img.shields.io/travis/Hirad Motamed/PLDataSource.svg?style=flat)](https://travis-ci.org/Hirad Motamed/PLDataSource)
+[![CI Status](http://img.shields.io/travis/Hirad Motamed/PLDataSource.svg?style=flat)](https://travis-ci.org/PendarLabs/PLDataSource)
 [![Version](https://img.shields.io/cocoapods/v/PLDataSource.svg?style=flat)](http://cocoapods.org/pods/PLDataSource)
 [![License](https://img.shields.io/cocoapods/l/PLDataSource.svg?style=flat)](http://cocoapods.org/pods/PLDataSource)
 [![Platform](https://img.shields.io/cocoapods/p/PLDataSource.svg?style=flat)](http://cocoapods.org/pods/PLDataSource)
