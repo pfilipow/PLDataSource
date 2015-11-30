@@ -1,30 +1,19 @@
-#
-# Be sure to run `pod lib lint PLDataSource.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
 
 Pod::Spec.new do |s|
   s.name             = "PLDataSource"
-  s.version          = "0.1.0"
-  s.summary          = "A short description of PLDataSource."
+  s.version          = "0.9.0"
+  s.summary          = "Table view data source classes to make presentation of non-trivial tables easier."
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+PLDataSource is a collection of classes that make it easier to build a non-trivial data source for a UITableView. The original motivation was to list different Core Data entities in one table easily, using NSFetchedResultsController. But the structure can be extended to many other use-cases.
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/PLDataSource"
+  s.homepage         = "https://github.com/PendarLabs/PLDataSource"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Hirad Motamed" => "hirad@pendarlabs.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/PLDataSource.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/PendarLabs/PLDataSource.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/thehirad'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
